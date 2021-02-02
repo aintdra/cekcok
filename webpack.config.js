@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = {
   entry: {
     app: './assets/app.ts',
@@ -14,10 +15,10 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader'], // You can simply use 'awesome-typescript-loader' here as an alternative
       },
       {
-        test: /\.(s[ac]|c)ss$/i,
+        test: /\.([s]c)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
