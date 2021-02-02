@@ -6,7 +6,7 @@ export const App = () => {
   const [my, setState] = useState<Person>();
   useEffect(() => {
     const { name, age, gender } = new People('Hendra', 26, 'male').identity();
-    setState((prevState) => ({ ...my, name, age, gender }));
+    setState((prevState) => ({ ...prevState, name, age, gender }));
   }, []);
   return (
     <>
